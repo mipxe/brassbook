@@ -1,0 +1,28 @@
+.tutor-2 {
+  position: relative;
+  padding-top: 70px;
+  padding-bottom: 21px;
+}
+@media (max-width: 1200px) {
+  .tutor-2 {
+    display: none;
+  }
+}
+.tutor-2__content {
+  display: flex;
+  align-items: center;
+  gap: 90px;
+}
+.tutor-2__achivements {
+  margin-right: 250px;
+}
+
+.piano {
+  position: absolute;
+  right: 0px;
+}
+
+.tutor__name_2 {
+  text-align: left;
+  left: 32px;
+}/*# sourceMappingURL=tutor-2.css.map */

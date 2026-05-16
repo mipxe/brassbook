@@ -1,0 +1,41 @@
+.button-type-1 {
+  padding: 16px 32px;
+  border-radius: 60px;
+  border: 2px solid #6B27FF;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-transform: uppercase;
+  display: inline-block;
+  font-family: var(--accent-font);
+  font-size: clamp(0.625rem, 0.398rem + 1.14vw, 1.25rem);
+  font-weight: 800;
+  letter-spacing: -0.2px;
+  background: #fff;
+  color: #6B27FF;
+}
+.button-type-1:hover {
+  background: #6B27FF;
+  color: #fff;
+}
+@media (max-width: 767px) {
+  .button-type-1 {
+    padding: 8px 16px;
+  }
+}
+.button-type-1_in-btn {
+  background: #6B27FF;
+  color: #fff;
+  border: 2px solid #fff;
+  font-size: 16px;
+  font-weight: 900;
+  letter-spacing: -0.16px;
+}
+.button-type-1_in-btn:hover {
+  background: #fff;
+  color: #6B27FF;
+}
+.button-type-1_up-btn {
+  font-size: 16px;
+  font-weight: 900;
+  letter-spacing: -0.16px;
+}/*# sourceMappingURL=buttonType1.css.map */

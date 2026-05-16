@@ -1,0 +1,76 @@
+.hero {
+  padding-bottom: 130px;
+  overflow: visible;
+  position: relative;
+}
+@media (max-width: 1200px) {
+  .hero {
+    padding-bottom: 200px;
+  }
+}
+@media (min-width: 1551px) {
+  .hero {
+    overflow: hidden;
+    padding-bottom: 0px;
+  }
+}
+@media (max-width: 1200px) {
+  .hero {
+    background: linear-gradient(51deg, #9E00FF 4.09%, #007AFF 137.66%);
+  }
+}
+.hero__background {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+@media (max-width: 1200px) {
+  .hero__background {
+    display: none;
+  }
+}
+.hero__container {
+  background: url("../../assets/img/stars.svg") center/cover no-repeat;
+  position: relative;
+  z-index: 9;
+  padding: 0 60px;
+}
+@media (max-width: 767px) {
+  .hero__container {
+    padding: 0 30px;
+  }
+}
+.hero__main {
+  padding-top: 205px;
+  padding-bottom: 280px;
+}
+@media (max-width: 1200px) {
+  .hero__main {
+    padding-bottom: 140px;
+  }
+}
+@media (max-width: 900px) {
+  .hero__main {
+    padding-bottom: 60px;
+    margin-top: 110px;
+  }
+}
+.hero__title {
+  font-family: var(--accent-font);
+  font-size: clamp(1.875rem, -0.362rem + 11.19vw, 5rem);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -1.6px;
+  text-transform: uppercase;
+}
+.hero__info {
+  margin-top: 16px;
+  font-family: var(--main-font);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 140%;
+  letter-spacing: -0.72px;
+}
+.hero__button {
+  margin-top: 48px;
+}/*# sourceMappingURL=hero.css.map */

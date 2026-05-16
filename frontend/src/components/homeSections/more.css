@@ -1,0 +1,135 @@
+.more {
+  position: relative;
+  padding-top: 280px;
+}
+@media (max-width: 1200px) {
+  .more {
+    display: none;
+  }
+}
+.more__background {
+  display: block;
+  position: absolute;
+  top: 75px;
+  z-index: -1;
+}
+.more__upper-deco {
+  display: block;
+  position: absolute;
+  top: 0px;
+  z-index: -1;
+}
+.more__notes {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+.more__upper {
+  margin-bottom: 40px;
+}
+.more__bottom {
+  padding-top: 60px;
+  padding-bottom: 50px;
+}
+.more__title {
+  text-align: center;
+  font-family: var(--accent-font);
+  font-size: 48px;
+  font-weight: 900;
+  letter-spacing: -0.96px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+.more__divider {
+  max-width: 1280px;
+  margin: 0 auto;
+  height: 1px;
+  background: #D64EFF;
+}
+.more__bottom {
+  padding-top: 60px;
+  padding-bottom: 50px;
+  display: flex;
+  gap: 108px;
+  margin-bottom: 49px;
+}
+.more__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-basis: calc(50% - 108px);
+}
+.more__bot-title {
+  color: #FFF;
+  font-family: var(--accent-font);
+  font-size: 48px;
+  font-weight: 800;
+  letter-spacing: -0.48px;
+  margin-bottom: 16px;
+}
+.more__bot-text {
+  color: rgba(255, 255, 255, 0.9);
+  font-family: var(--main-font);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 145%;
+  letter-spacing: -0.24px;
+  margin-bottom: 32px;
+}
+.more__img {
+  max-width: 383px;
+}
+.more__img img {
+  width: 100%;
+}
+.feedback {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: #FFFFFF;
+  border-radius: 60px;
+  padding: 32px;
+}
+.feedback__button {
+  text-align: center;
+}
+.feedback__message {
+  height: 236px;
+  display: block;
+  padding: 23px 36px;
+  border-radius: 20px;
+  background: #F4F4F6;
+  width: 526px;
+  border: 0px;
+  outline: 0px;
+}
+.feedback__message::-moz-placeholder {
+  color: rgba(35, 11, 63, 0.4);
+  font-family: var(--main-font);
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: -0.16px;
+}
+.feedback__message::placeholder {
+  color: rgba(35, 11, 63, 0.4);
+  font-family: var(--main-font);
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: -0.16px;
+}
+.feedback__info {
+  max-width: 526px;
+  color: #9FA4BC;
+  text-align: center;
+  font-family: var(--main-font);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 145%;
+  letter-spacing: -0.14px;
+}
+.feedback__info a {
+  color: #6B27FF;
+  text-decoration: underline;
+}/*# sourceMappingURL=more.css.map */

@@ -1,0 +1,206 @@
+.div_main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px
+}
+
+.div_first {
+    display: inline-flex;
+    gap: 15px;
+}
+
+.div_second {
+    display: inline-flex;
+}
+
+.div_third {
+    display: inline-flex;
+    gap: 15px;
+}
+
+.signform__fieldscontainer {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    gap: 20px;
+    border-radius: 40px;
+    border: 1px solid rgba(25, 6, 54, 0.2);
+    margin-bottom: 32px;
+    max-width: 800px;
+  }
+  .signform__fieldscontainer label {
+    color: #534068;
+    font-family: var(--accent-font);
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.4px;
+  }
+  .sign__input1 {
+    padding: 23px 36px;
+    border-radius: 20px;
+    background: #F4F4F6;
+    display: block;
+    width: 280px;
+  }
+  .sign__input2 {
+    padding: 23px 36px;
+    border-radius: 20px;
+    background: #F4F4F6;
+    display: block;
+    width: 424px;
+  }
+  .sign__input3 {
+    padding: 23px 36px;
+    border-radius: 20px;
+    background: #F4F4F6;
+    display: block;
+    width: 720px;
+  }
+  .sign__input4 {
+    padding: 23px 36px;
+    border-radius: 20px;
+    background: #F4F4F6;
+    display: block;
+    width: 484px;
+  }
+  .sign__input5 {
+    padding: 23px 36px;
+    border-radius: 20px;
+    background: #F4F4F6;
+    display: block;
+    width: 220px;
+  }
+  .sign__input1::-moz-placeholder {
+    color: rgba(25, 6, 54, 0.4);
+    font-family: var(--main-font);
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: -0.16px;
+  }
+  .sign__input1::placeholder {
+    color: rgba(25, 6, 54, 0.4);
+    font-family: var(--main-font);
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: -0.16px;
+  }
+  .sign__input2::-moz-placeholder {
+    color: rgba(25, 6, 54, 0.4);
+    font-family: var(--main-font);
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: -0.16px;
+  }
+  .sign__input2::placeholder {
+    color: rgba(25, 6, 54, 0.4);
+    font-family: var(--main-font);
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: -0.16px;
+  }
+  .sign__input3::-moz-placeholder {
+    color: rgba(25, 6, 54, 0.4);
+    font-family: var(--main-font);
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: -0.16px;
+  }
+  .sign__input3::placeholder {
+    color: rgba(25, 6, 54, 0.4);
+    font-family: var(--main-font);
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: -0.16px;
+  }
+  .sign__input4::-moz-placeholder {
+    color: rgba(25, 6, 54, 0.4);
+    font-family: var(--main-font);
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: -0.16px;
+  }
+  .sign__input4::placeholder {
+    color: rgba(25, 6, 54, 0.4);
+    font-family: var(--main-font);
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: -0.16px;
+  }
+  .sign__input5::-moz-placeholder {
+    color: rgba(25, 6, 54, 0.4);
+    font-family: var(--main-font);
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: -0.16px;
+  }
+  .sign__input5::placeholder {
+    color: rgba(25, 6, 54, 0.4);
+    font-family: var(--main-font);
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: -0.16px;
+  }
+
+  .ChangeAcc {
+    display: inline-flex;
+    position: absolute;
+    margin-inline-start: 40px;
+    gap: 32px;
+    margin-top: -44px;
+    margin-inline-start: 259px;
+  }
+
+  .button__personalact {
+    background-color: rgb(255, 255, 255);
+    color: rgb(107, 39, 255);
+    font-size: 24px;
+    line-height: 1.6;
+    letter-spacing: -0.48px;
+    font-family: var(--main-font);
+    font-weight: 800;
+  }
+
+  .button__personalacttt {
+    color: rgba(107, 39, 255, 0);
+    border-top-style: solid;
+    border-top-color: rgb(107, 39, 255);
+    border-top-width: 6px;
+    margin-top: 39px;
+    margin-inline-start: -318px;
+    border-radius: 6px;
+  }
+
+.passwordWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+  .button_show_password {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #534068;
+    z-index: 2;
+    transition: opacity 0.2s ease;
+}
+
+.errorUnder {
+    color: #FF4D4D;
+    font-size: 12px;
+    font-weight: 500;
+    font-family: var(--main-font);
+    display: flex;
+    align-items: center;
+    gap: 4px; /* Расстояние между значком и текстом ошибки */
+    animation: fadeIn 0.3s ease;
+}

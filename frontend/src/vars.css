@@ -1,0 +1,7 @@
+html {
+  --main-font: Inter;
+  --accent-font: Nunito;
+  --accent-color: linear-gradient(180deg, #EEDD51 -11.48%, #EEAF51 86.89%);
+  --font-color: #534068;
+  --title-color: #230B3F;
+}/*# sourceMappingURL=vars.css.map */

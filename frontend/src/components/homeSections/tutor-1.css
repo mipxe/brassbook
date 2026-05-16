@@ -1,0 +1,24 @@
+.tutor-1 {
+  position: relative;
+  padding-top: 70px;
+  padding-bottom: 110px;
+}
+@media (max-width: 1200px) {
+  .tutor-1 {
+    display: none;
+  }
+}
+.tutor-1__content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 90px;
+}
+.tutor-1__achivements {
+  margin-left: 250px;
+}
+
+.tube-2 {
+  position: absolute;
+  z-index: -1;
+}/*# sourceMappingURL=tutor-1.css.map */

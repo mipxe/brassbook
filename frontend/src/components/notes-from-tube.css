@@ -1,0 +1,10 @@
+.notes-from-tube {
+  max-width: 650px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 3;
+}
+.notes-from-tube img {
+  width: 100%;
+}/*# sourceMappingURL=notes-from-tube.css.map */

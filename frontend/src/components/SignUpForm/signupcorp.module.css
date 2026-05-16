@@ -1,0 +1,58 @@
+  .button__corporationact {
+    background-color: rgb(255, 255, 255);
+    color: rgb(107, 39, 255);
+    font-size: 24px;
+    line-height: 1.6;
+    letter-spacing: -0.48px;
+    font-family: var(--main-font);
+    font-weight: 800;
+  }
+
+  .ChangeAcc {
+    display: inline-flex;
+    position: absolute;
+    margin-inline-start: 40px;
+    gap: 32px;
+    margin-top: -44px;
+    margin-inline-start: 39px;
+  }
+
+  .button__corporationacttt {
+    color: rgba(107, 39, 255, 0);
+    border-top-style: solid;
+    border-top-color: rgb(107, 39, 255);
+    border-top-width: 6px;
+    margin-top: 39px;
+    margin-inline-start: -222px;
+    border-radius: 6px;
+  }
+
+  
+  .button_show_password {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #534068;
+    z-index: 2;
+    transition: opacity 0.2s ease;
+}
+
+.errorUnder {
+    color: #FF4D4D;
+    font-size: 12px;
+    font-weight: 500;
+    font-family: var(--main-font);
+    display: flex;
+    align-items: center;
+    gap: 4px; /* Расстояние между значком и текстом ошибки */
+    animation: fadeIn 0.3s ease;
+}

@@ -1,0 +1,23 @@
+.feedback__input {
+  display: block;
+  padding: 23px 36px;
+  border-radius: 20px;
+  background: #F4F4F6;
+  width: 526px;
+  border: 0px;
+  outline: 0px;
+}
+.feedback__input::-moz-placeholder {
+  color: rgba(35, 11, 63, 0.4);
+  font-family: var(--main-font);
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: -0.16px;
+}
+.feedback__input::placeholder {
+  color: rgba(35, 11, 63, 0.4);
+  font-family: var(--main-font);
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: -0.16px;
+}/*# sourceMappingURL=feedbackInput.css.map */

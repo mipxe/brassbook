@@ -1,0 +1,33 @@
+# ===================
+# OS generated files (для всех ОС)
+# ===================
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.directory
+*~
+
+# ===================
+# IDE (общие для всего проекта)
+# ===================
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+.settings/
+.project
+.classpath
+
+# ===================
+# Logs (общие логи)
+# ===================
+logs/
+*.log
+
+# ===================
+# Docker
+# ===================
+.env.docker
+docker-compose.override.yml
