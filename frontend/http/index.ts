@@ -1,7 +1,8 @@
 import axios from "axios";
 import { TokenResponse } from "../models/response/TokenResponse.ts";
 
-export const API_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080/api/v1'
+const baseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080';
+export const API_URL = `${baseUrl}/api/v1`;
 
 const $api = axios.create({
     withCredentials: true,
