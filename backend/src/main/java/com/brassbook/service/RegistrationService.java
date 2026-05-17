@@ -106,34 +106,47 @@ public class RegistrationService {
         headers.setContentType(org.springframework.http.MediaType.APPLICATION_JSON);
         headers.set("X-API-KEY", apiKey);
 
-        // Формируем структуру тела запроса (JSON)
+        // Главный контейнер запроса
         java.util.Map<String, Object> requestBody = new java.util.HashMap<>();
+
+        // Вложенный объект message
         java.util.Map<String, Object> messageJson = new java.util.HashMap<>();
 
-        // Твой верифицированный домен из DNSExit!
+        // ВНИМАНИЕ: Спецификация Unisender требует передавать sender_email прямо внутри message
         messageJson.put("sender_email", "no-reply@bbbrassbook.work.gd");
         messageJson.put("sender_name", "BrassBook Support");
         messageJson.put("subject", "Код подтверждения регистрации в BrassBook");
 
-        // Передаем текст письма в формате HTML
+        // Формируем тело письма
         java.util.Map<String, Object> bodyJson = new java.util.HashMap<>();
         bodyJson.put("html", "<p>Ваш код подтверждения регистрации: <b style='font-size: 16px;'>" + code + "</b></p>");
         messageJson.put("body", bodyJson);
 
-        // Добавляем получателя
+        // Формируем массив получателей
         java.util.Map<String, Object> recipientJson = new java.util.HashMap<>();
         recipientJson.put("email", codeRequest.getEmail());
+
+        // Кладем массив получателей в объект message
         messageJson.put("recipients", java.util.Collections.singletonList(recipientJson));
 
+        // Кладем message в requestBody
         requestBody.put("message", messageJson);
 
-        // Оборачиваем заголовки и тело
+        // Упаковываем в HttpEntity
         org.springframework.http.HttpEntity<java.util.Map<String, Object>> entity =
                 new org.springframework.http.HttpEntity<>(requestBody, headers);
 
-        // Отправляем запрос
+        // Отправка запроса
         try {
-            restTemplate.postForEntity(url, entity, String.class);
+            org.springframework.http.ResponseEntity<String> response =
+                    restTemplate.postForEntity(url, entity, String.class);
+
+            if (response.getStatusCode() == org.springframework.http.HttpStatus.OK) {
+                System.out.println("Письмо успешно отправлено через HTTP API Unisender Go!");
+            } else {
+                System.err.println("Unisender вернул ошибку: " + response.getStatusCode() + ", ответ: " + response.getBody());
+                throw new RuntimeException("Ошибка шлюза отправки");
+            }
         } catch (Exception e) {
             System.err.println("Критическая ошибка при отправке запроса в Unisender: " + e.getMessage());
             throw new RuntimeException("Не удалось отправить код подтверждения. Попробуйте позже.");
