@@ -1,7 +1,7 @@
 import React, { createContext } from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
-import Store from '../../brassbookWithReact/store/store'
+import Store from '../../frontend/store/store'
 import './fonts.css'
 import './vars.css'
 import './global.css'
