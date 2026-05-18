@@ -92,49 +92,38 @@ public class RegistrationService {
     private void sendMailCode(CodeRequest codeRequest) {
         String code = String.format("%06d", new Random().nextInt(999999));
 
+        // Сохранение кода в Redis остается без изменений
         redisTemplate.opsForValue().set(
                 codeRequest.getEmail(),
                 code,
                 Duration.ofMinutes(3)
         );
 
-        // URL транзакционного API Unisender Go (работает по HTTPS, Render его не заблокирует)
         String url = "https://go2.unisender.ru/ru/transactional/api/v1/email/send.json";
 
-        // Формируем HTTP-заголовки
+        // Настройка заголовков запроса
         org.springframework.http.HttpHeaders headers = new org.springframework.http.HttpHeaders();
         headers.setContentType(org.springframework.http.MediaType.APPLICATION_JSON);
         headers.set("X-API-KEY", apiKey);
 
-        // Главный контейнер запроса
-        java.util.Map<String, Object> requestBody = new java.util.HashMap<>();
+        // Собираем JSON вручную строкой, чтобы гарантировать 100% правильную структуру для Unisender
+        String bodyJson = "{"
+                + "\"message\": {"
+                + "    \"sender_email\": \"no-reply@bbbrassbook.work.gd\","
+                + "    \"sender_name\": \"BrassBook Support\","
+                + "    \"subject\": \"Код подтверждения регистрации в BrassBook\","
+                + "    \"body\": {"
+                + "        \"html\": \"<p>Ваш код подтверждения регистрации: <b style='font-size: 16px;'>" + code + "</b></p>\""
+                + "    },"
+                + "    \"recipients\": ["
+                + "        {\"email\": \"" + codeRequest.getEmail() + "\"}"
+                + "    ]"
+                + "}"
+                + "}";
 
-        // Вложенный объект message
-        java.util.Map<String, Object> messageJson = new java.util.HashMap<>();
-
-        // ВНИМАНИЕ: Спецификация Unisender требует передавать sender_email прямо внутри message
-        messageJson.put("sender_email", "no-reply@bbbrassbook.work.gd");
-        messageJson.put("sender_name", "BrassBook Support");
-        messageJson.put("subject", "Код подтверждения регистрации в BrassBook");
-
-        // Формируем тело письма
-        java.util.Map<String, Object> bodyJson = new java.util.HashMap<>();
-        bodyJson.put("html", "<p>Ваш код подтверждения регистрации: <b style='font-size: 16px;'>" + code + "</b></p>");
-        messageJson.put("body", bodyJson);
-
-        // Формируем массив получателей
-        java.util.Map<String, Object> recipientJson = new java.util.HashMap<>();
-        recipientJson.put("email", codeRequest.getEmail());
-
-        // Кладем массив получателей в объект message
-        messageJson.put("recipients", java.util.Collections.singletonList(recipientJson));
-
-        // Кладем message в requestBody
-        requestBody.put("message", messageJson);
-
-        // Упаковываем в HttpEntity
-        org.springframework.http.HttpEntity<java.util.Map<String, Object>> entity =
-                new org.springframework.http.HttpEntity<>(requestBody, headers);
+        // Упаковываем строковой JSON в HttpEntity
+        org.springframework.http.HttpEntity<String> entity =
+                new org.springframework.http.HttpEntity<>(bodyJson, headers);
 
         // Отправка запроса
         try {
@@ -142,10 +131,10 @@ public class RegistrationService {
                     restTemplate.postForEntity(url, entity, String.class);
 
             if (response.getStatusCode() == org.springframework.http.HttpStatus.OK) {
-                System.out.println("Письмо успешно отправлено через HTTP API Unisender Go!");
+                System.out.println("Письмо успешно отправлено через строковой HTTP API!");
             } else {
-                System.err.println("Unisender вернул ошибку: " + response.getStatusCode() + ", ответ: " + response.getBody());
-                throw new RuntimeException("Ошибка шлюза отправки");
+                System.err.println("Unisender вернул код: " + response.getStatusCode() + ", ответ: " + response.getBody());
+                throw new RuntimeException("Ошибка шлюза Unisender");
             }
         } catch (Exception e) {
             System.err.println("Критическая ошибка при отправке запроса в Unisender: " + e.getMessage());
