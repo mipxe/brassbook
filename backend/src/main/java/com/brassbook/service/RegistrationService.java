@@ -70,9 +70,6 @@ public class RegistrationService {
     }
 
     public void verifyCode(VerifyCodeRequest verifyCodeRequest) {
-        if (!userRepository.existsByEmail(verifyCodeRequest.getEmail())) {
-            throw new IllegalArgumentException("Пользователя с таким email не существует");
-        }
         String savedCode = redisTemplate.opsForValue().get(verifyCodeRequest.getEmail());
         if (savedCode == null || !savedCode.equals(verifyCodeRequest.getCode())) {
             throw new IllegalArgumentException("Неверный код");
