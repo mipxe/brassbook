@@ -1,5 +1,5 @@
 import classes from './image.module.css';
-import Group1 from './src/assets/img/Group 1.png'
+import Group1 from '../../assets/img/Group 1.png';
 
 const ImagePipe = () => {
     return (
